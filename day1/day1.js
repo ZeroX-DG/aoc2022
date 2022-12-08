@@ -19,7 +19,7 @@ const puzzle2 = () => {
 
   readInput()
     .on('line', line => {
-      calories = !line ? [...calories, currentCalories] : calories;
+      !line && calories.push(currentCalories);
       currentCalories = !line ? 0 : currentCalories + +line;
     })
     .on('close', () => {
